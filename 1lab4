@@ -1,0 +1,164 @@
+
+public class HoaQua {
+    public String nguonGoc;
+    public String ngayNhap;
+    public int soLuong;
+    public String huongVi;
+    public HoaQua(){
+    }
+    public HoaQua(String nguonGoc,String ngayNhap,int soLuong,String ten,String cauTruc, String huongVi){
+        this.nguonGoc=nguonGoc;
+        this.soLuong=soLuong;
+        this.ngayNhap=ngayNhap;
+        this.huongVi=huongVi;
+    }
+
+    public String getHuongVi() {
+        return huongVi;
+    }
+
+    public void setHuongVi(String huongVi) {
+        this.huongVi = huongVi;
+    }
+    
+    public String getNguonGoc() {
+        return nguonGoc;
+    }
+
+    public void setNguonGoc(String nguonGoc) {
+        this.nguonGoc = nguonGoc;
+    }
+
+    public String getNgayNhap() {
+        return ngayNhap;
+    }
+
+    public void setNgayNhap(String ngayNhap) {
+        this.ngayNhap = ngayNhap;
+    }
+
+    public int getSoLuong() {
+        return soLuong;
+    }
+
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
+    }
+}
+
+
+
+import java.util.Scanner;
+
+    class QuaCam extends HoaQua{
+        public String cauTruc;
+        public QuaCam(){}
+        public QuaCam(String cauTruc){
+            this.cauTruc=cauTruc;
+        }
+        
+    public String getCauTruc() {
+        return cauTruc;
+    }
+
+    public void setCauTruc(String cauTruc) {
+        this.cauTruc = cauTruc;
+    }
+   public void nhap(){
+       Scanner scn = new Scanner(System.in);
+       
+       System.out.println("khoi luong:" + 12);
+       setNguonGoc(scn.nextLine());
+       
+       System.out.println("nhap cau truc");
+       cauTruc = scn.nextLine();
+   }
+}
+class CamCaoPhong extends QuaCam{
+    public String hat;
+    public String kichThuoc;
+    public CamCaoPhong(){}
+    public CamCaoPhong(String hat, String kichThuoc){
+        this.hat=hat;
+        this.kichThuoc=kichThuoc;
+    }
+
+    public String getHat() {
+        return hat;
+    }
+
+    public void setHat(String hat) {
+        this.hat = hat;
+    }
+
+    public String getKichThuoc() {
+        return kichThuoc;
+    }
+
+    public void setKichThuoc(String kichThuoc) {
+        this.kichThuoc = kichThuoc;
+    }
+    
+}
+class CamSanh extends QuaCam{
+    public String cohat;
+    public String kichThuoc1;
+    public CamSanh(){}
+    public CamSanh(String cohat,String kichThuoc){
+        this.cohat=cohat;
+        this.kichThuoc1=kichThuoc1;
+    }
+
+    public String getCohat() {
+        return cohat;
+    }
+
+    public void setCohat(String cohat) {
+        this.cohat = cohat;
+    }
+
+    public String getKichThuoc1() {
+        return kichThuoc1;
+    }
+
+    public void setKichThuoc1(String kichThuoc1) {
+        this.kichThuoc1 = kichThuoc1;
+    }
+    
+}
+
+class QuaTao extends HoaQua{
+    public String cauTruc1;
+    public QuaTao(){}
+    public QuaTao(String cauTruc1){
+        this.cauTruc1=cauTruc1;
+    }
+
+    public String getCauTruc1() {
+        return cauTruc1;
+    }
+
+    public void setCauTruc1(String cauTruc1) {
+        this.cauTruc1 = cauTruc1;
+    }
+    
+}
+
+
+import java.util.Scanner;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        HoaQua hq = new HoaQua();
+        QuaCam qc = new QuaCam();
+        CamCaoPhong ccp = new CamCaoPhong();
+        CamSanh cs = new CamSanh();
+        QuaTao qt = new QuaTao();
+        
+        qc.nhap();
+        Scanner scn = new Scanner(System.in);
+        System.out.println("cau truc la: "+ qc.cauTruc);
+    }
+}
